@@ -1,4 +1,4 @@
-﻿namespace recicla_belem_app
+﻿namespace recicla_belem_app.Page
 {
     public partial class MainPage : ContentPage
     {

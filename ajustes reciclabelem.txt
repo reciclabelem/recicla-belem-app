@@ -1,0 +1,6 @@
+- ajustando a abertura do app para um tamanho aproximado de um celular
+- recolocado agluns usings
+- inserindo a pasta Page
+- movendo a MainPage para Page;
+- ajustando as referencias para xxxx.Page.xxx
+- inserir 
