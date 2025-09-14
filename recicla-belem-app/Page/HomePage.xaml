@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="recicla_belem_app.Page.HomePage"
+             Title="Recicla Belém">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+
+            <Label Text="Bem-vindo ao Recicla Belém!"
+                   FontSize="24"
+                   HorizontalOptions="Center"
+                   TextColor="Green" />
+
+            <Label Text="Escolha uma opção abaixo:"
+                   FontSize="18"
+                   HorizontalOptions="Center" />
+
+            <Button Text="Tipos de Lixo"
+                    Clicked="OnTiposLixoClicked"
+                    HorizontalOptions="Fill" />
+
+            <Button Text="Mapa de Pontos de Coleta"
+                    Clicked="OnMapaClicked"
+                    HorizontalOptions="Fill" />
+
+            <Button Text="Desafios Semanais"
+                    Clicked="OnDesafiosClicked"
+                    HorizontalOptions="Fill" />
+
+            <Button Text="Sair"
+                    Clicked="OnLogoutClicked"
+                    HorizontalOptions="Fill" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
