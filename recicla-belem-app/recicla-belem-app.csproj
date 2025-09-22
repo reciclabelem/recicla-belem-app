@@ -67,6 +67,8 @@
 
 	<ItemGroup>
 	  <Folder Include="Models\" />
+	  <Folder Include="Models\" />
+	  <Folder Include="Views\" />
 	  <Folder Include="Views\" />
 	</ItemGroup>
 
@@ -78,6 +80,12 @@
 
 	<ItemGroup>
 	  <MauiXaml Update="Page\LoginPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Page\RegisterPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Page\TiposLixoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

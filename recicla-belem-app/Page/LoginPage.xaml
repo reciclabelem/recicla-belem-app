@@ -27,5 +27,24 @@
                 Clicked="OnRegisterClicked"
                 HorizontalOptions="Fill" />
 
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+             </Grid.ColumnDefinitions>
+
+            <Button Text="Sair"
+                    Grid.Column="1"
+                    Clicked="OnExitClicked"
+                    FontSize="14"
+                    BackgroundColor="Transparent"
+                    TextColor="Gray"
+                    Padding="5"
+                    WidthRequest="30"
+                    HeightRequest="30"
+                    CornerRadius="15"
+                    HorizontalOptions="End"/>
+        </Grid>
+
     </VerticalStackLayout>
 </ContentPage>

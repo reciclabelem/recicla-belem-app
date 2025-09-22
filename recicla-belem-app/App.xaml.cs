@@ -12,15 +12,15 @@ namespace recicla_belem_app
         {
             InitializeComponent();
 
-            MainPage = new AppShell();
+            MainPage = new NavigationPage(new Page.LoginPage());
         }
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
             var window = base.CreateWindow(activationState);
 
-            window.Width = 500; // Largura aproximada de um celular
-            window.Height = 800; // Altura aproximada de um celular
+            window.Width = 500;
+            window.Height = 800;
 
             return window;
         }

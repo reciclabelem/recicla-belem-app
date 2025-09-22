@@ -11,7 +11,7 @@ public partial class HomePage : ContentPage
 
     private async void OnTiposLixoClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Tipos de Lixo", "Aqui você verá a lista de resíduos e como descartar.", "OK");
+        await Navigation.PushAsync(new TiposLixoPage());
     }
 
     private async void OnMapaClicked(object sender, EventArgs e)
@@ -26,6 +26,6 @@ public partial class HomePage : ContentPage
 
     private async void OnLogoutClicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync("//LoginPage");
+        await Navigation.PopToRootAsync();
     }
 }

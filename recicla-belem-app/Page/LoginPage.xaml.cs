@@ -1,4 +1,4 @@
-using Microsoft.Maui.Controls;
+Ôªøusing Microsoft.Maui.Controls;
 
 namespace recicla_belem_app.Page;
 
@@ -9,6 +9,15 @@ public partial class LoginPage : ContentPage
         InitializeComponent();
     }
 
+    protected override void OnAppearing()
+    {
+        base.OnAppearing();
+
+        // Limpa os campos ao voltar
+        UserEntry.Text = string.Empty;
+        PasswordEntry.Text = string.Empty;
+    }
+
     private async void OnLoginClicked(object sender, EventArgs e)
     {
         string user = UserEntry.Text;
@@ -16,22 +25,43 @@ public partial class LoginPage : ContentPage
 
         if (string.IsNullOrWhiteSpace(user) || string.IsNullOrWhiteSpace(password))
         {
-            await DisplayAlert("Erro", "Informe usu·rio e senha", "OK");
+            await DisplayAlert("Erro", "Informe usu√°rio e senha", "OK");
             return;
         }
 
         if (user == "admin" && password == "123")
         {
-            await Shell.Current.GoToAsync("//HomePage");
+            await Navigation.PushAsync(new HomePage());
         }
         else
         {
-            await DisplayAlert("Erro", "Usu·rio ou senha inv·lidos", "OK");
+            await DisplayAlert("Erro", "Usu√°rio ou senha inv√°lidos", "OK");
         }
     }
 
     private async void OnRegisterClicked(object sender, EventArgs e)
     {
-        await DisplayAlert("Registrar", "Aqui depois vocÍ ir· para a tela de cadastro.", "OK");
+        await Navigation.PushAsync(new RegisterPage());
+    }
+    private async void OnExitClicked(object sender, EventArgs e)
+    {
+        bool confirmar = await DisplayAlert("Confirma√ß√£o", "Deseja realmente sair do aplicativo?", "Sim", "Cancelar");
+        
+        if (!confirmar)
+            return;
+
+        var button = sender as Button;
+
+        await Task.WhenAll(
+            button.ScaleTo(0.8, 150),
+            button.FadeTo(0, 150)
+        );
+#if ANDROID
+        Android.OS.Process.KillProcess(Android.OS.Process.MyPid());
+#elif WINDOWS
+        Application.Current.Quit();
+#elif IOS
+        // iOS n√£o permite fechar o app programaticamente
+#endif
     }
 }
